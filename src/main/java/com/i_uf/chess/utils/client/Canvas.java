@@ -1,11 +1,7 @@
-package com.i_uf.chess.utils;
+package com.i_uf.chess.utils.client;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.function.Consumer;
 
 public class Canvas {
@@ -15,7 +11,8 @@ public class Canvas {
         this.y = y;
         this.width = width;
         this.height = height;
-    }        private final LinkedList<Consumer<Graphics>> context = new LinkedList<>();
+    }
+    private final LinkedList<Consumer<Graphics>> context = new LinkedList<>();
 
     public Canvas graphics(Graphics graphics) {
         while(!context.isEmpty()) context.pop().accept(graphics);
